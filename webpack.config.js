@@ -39,51 +39,37 @@ const styleLoader = addition => {
     'css-loader'
   ];
 
-  if (addition) {
-    cssLoaders.push(addition);
-  }
+  if (addition) cssLoaders.push(addition);
 
   return cssLoaders;
 }
 
 const babelOptions = (preset, plugin) => {
   const options = {
-    presets: [
-      '@babel/preset-env'
-    ],
-    plugins: [
-      '@babel/plugin-proposal-class-properties'
-    ]
+    presets: ['@babel/preset-env'],
+    plugins: ['@babel/plugin-proposal-class-properties']
   }
 
-  if (preset) {
-    options.presets.push(preset);
-  }
-  if (plugin) {
-    options.plugins.push(plugin)
-  }
+  if (preset) options.presets.push(preset);
+  if (plugin) options.plugins.push(plugin);
 
   return options;
 }
 
 const jsLoaders = () => {
-  const loaders = [
-    {
-      loader: 'babel-loader',
-      options: babelOptions(),
-    }
-  ]
+  const loaders = [{
+    loader: 'babel-loader',
+    options: babelOptions(),
+  }];
 
-  if (isDev) {
-    loaders.push('eslint-loader');
-  }
+  if (isDev) loaders.push('eslint-loader');
 
   return loaders;
 }
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: ['@babel/polyfill', './index.jsx'],
+  entry: ['@babel/polyfill', './index.js'],
   output: {
     filename: filename('js'),
     path: path.resolve(__dirname, 'dist'),
@@ -103,7 +89,6 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: './index.html',
-      favicon: './assets/stoiс.jpg',
       minify: {
         collapseWhitespace: isProd
       }
@@ -116,16 +101,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: styleLoader(),
-      },
-      {
         test: /\.(png|jpg|svg|gif)/,
         use: ['file-loader'],
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
         use: ['file-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: styleLoader(),
       },
       {
         test: /\.s[ac]ss$/,
