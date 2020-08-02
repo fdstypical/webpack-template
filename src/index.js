@@ -1,5 +1,8 @@
 import Post from '@/Post';
+import '@/script.ts';
+
 import stoic from './assets/stoiс.jpg';
+
 import './style.css';
 import './style.scss'
 
