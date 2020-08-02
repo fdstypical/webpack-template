@@ -1,2 +1,2 @@
-import '@/script.ts';
+import '@src/script.ts';
 import './style.scss';

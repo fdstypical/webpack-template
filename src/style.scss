@@ -2,6 +2,10 @@ $bg-color: rgba(13, 13, 13, 0.25);
 $padding: 13px;
 
 .container {
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
   padding: $padding;
   background-color: $bg-color;
+  margin: 0 auto;
 }
