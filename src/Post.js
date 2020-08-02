@@ -11,7 +11,7 @@ export default class Post {
     })
   }
 
-  addImg() {
+  addImg(document) {
     const img = document.createElement('img');
     img.src = this.img;
     document.querySelector('.container').append(img);

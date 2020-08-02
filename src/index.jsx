@@ -9,7 +9,7 @@ import './style.css';
 import './style.scss'
 
 const post = new Post('Hello webpack', stoic);
-post.addImg();
+post.addImg(document);
 
 const App = () => (
   <div className="react-app">
