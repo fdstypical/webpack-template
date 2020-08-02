@@ -5,7 +5,4 @@ const myFunc = (name: string, num: number): object => {
   };
 };
 
-const a: number = 10;
-const b: string = "Hello";
-
-console.log(a, b, myFunc("Andrey", 18));
+console.log(myFunc("Andrey", 18));
