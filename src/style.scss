@@ -1,0 +1,7 @@
+$bg-color: rgba(13, 13, 13, 0.25);
+$padding: 13px;
+
+.container {
+  padding: $padding;
+  background-color: $bg-color;
+}
