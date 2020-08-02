@@ -121,22 +121,6 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: jsLoaders(),
-      },
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loader: {
-          loader: 'babel-loader',
-          options: babelOptions('@babel/preset-typescript'),
-        }
-      },
-      {
-        test: /\.jsx$/,
-        exclude: /node_modules/,
-        loader: {
-          loader: 'babel-loader',
-          options: babelOptions('@babel/preset-react'),
-        }
       }
     ]
   }
