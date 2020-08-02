@@ -1,11 +1,13 @@
 {
+  "root": true,
+  "extends": ["eslint:recommended", "airbnb-base"],
   "parser": "babel-eslint",
   "rules": {
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "import/no-unresolved": "off"
   },
   "env": {
     "es6": true,
     "browser": true
-  },
-  "extends": ["eslint:recommended"]
+  }
 }
