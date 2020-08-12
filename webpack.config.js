@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 
+const { jsLoaders, styleLoader, filename } = require('./webpack/helpers/index');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
@@ -23,48 +24,6 @@ const optimization = () => {
   }
 
   return config;
-}
-
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`;
-
-const styleLoader = addition => {
-  const cssLoaders = [
-    {
-      loader: MiniCssExtractPlugin.loader,
-      options: {
-        hmr: isDev,
-        reloadAll: true,
-      }
-    },
-    'css-loader'
-  ];
-
-  if (addition) cssLoaders.push(addition);
-
-  return cssLoaders;
-}
-
-const babelOptions = (preset, plugin) => {
-  const options = {
-    presets: ['@babel/preset-env'],
-    plugins: ['@babel/plugin-proposal-class-properties']
-  }
-
-  if (preset) options.presets.push(preset);
-  if (plugin) options.plugins.push(plugin);
-
-  return options;
-}
-
-const jsLoaders = () => {
-  const loaders = [{
-    loader: 'babel-loader',
-    options: babelOptions(),
-  }];
-
-  if (isDev) loaders.push('eslint-loader');
-
-  return loaders;
 }
 
 module.exports = {
