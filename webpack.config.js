@@ -102,8 +102,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(png|jpg|svg|gif)/,
-        use: ['file-loader'],
+        test: /\.(png|jpe?g|svg|gif)/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              disable: true,
+            },
+          },
+        ],
       },
       {
         test: /\.(ttf|woff|woff2|eot)$/,
