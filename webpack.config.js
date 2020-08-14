@@ -5,26 +5,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 
+const { optimization } = require('./webpack');
 const { jsLoaders, styleLoader, filename } = require('./webpack/helpers/index');
+
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
-
-const optimization = () => {
-  const config = {
-    splitChunks: {
-      chunks: 'all',
-    },
-  };
-
-  if (isProd) {
-    config.minimizer = [
-      new OptimizeCssAssetsWebpackPlugin(),
-      new TerserWebpackPlugin(),
-    ]
-  }
-
-  return config;
-}
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
