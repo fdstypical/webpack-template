@@ -9,7 +9,7 @@ const { jsLoaders, styleLoader, filename } = require('./webpack/helpers/index');
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
 
-module.exports = {
+const config = {
   context: path.resolve(__dirname, 'src'),
   entry: ['@babel/polyfill', './index.js'],
   output: {
@@ -75,3 +75,9 @@ module.exports = {
     ]
   }
 }
+
+async function webpackPrestart(env, { mode }) {
+  return config;
+}
+
+module.exports = webpackPrestart;
