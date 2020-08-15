@@ -1,13 +1,10 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { styleLoader } = require('./helpers');
+const isDev = process.env.NODE_ENV === 'development';
 
 const genericConfig = {
   context: path.resolve(__dirname, 'src'),
-  entry: [
-    '@babel/polyfill',
-    path.resolve(__dirname, '../src/', 'index.js'),
-  ],
+  entry: path.resolve(__dirname, '../src/', 'index.js'),
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json'],
     alias: {
@@ -38,7 +35,10 @@ const genericConfig = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { hmr: true, reloadAll: true, }
+            options: {
+              hmr: isDev,
+              reloadAll: true,
+            },
           },
           'css-loader',
           'sass-loader',
