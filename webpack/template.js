@@ -1,5 +1,6 @@
 const path = require('path');
-const { styleLoader, filename, jsLoaders } = require('./helpers');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { styleLoader } = require('./helpers');
 
 const genericConfig = {
   context: path.resolve(__dirname, 'src'),
@@ -33,17 +34,20 @@ const genericConfig = {
         use: ['file-loader'],
       },
       {
-        test: /\.css$/,
-        use: styleLoader(),
-      },
-      {
         test: /\.s[ac]ss$/,
-        use: styleLoader('sass-loader'),
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { hmr: true, reloadAll: true, }
+          },
+          'css-loader',
+          'sass-loader',
+        ]
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: jsLoaders(),
+        use: 'babel-loader',
       }
     ]
   }
