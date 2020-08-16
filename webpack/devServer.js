@@ -2,6 +2,7 @@ const path = require('path');
 
 const devServer = {
   index: 'index.html',
+  stats: 'errors-only',
   hot: true,
   noInfo: true,
   open: true,
