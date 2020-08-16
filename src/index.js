@@ -1,4 +1,5 @@
 import './assets/scss/index.scss';
+import './style.scss';
 
 class Game {
   gameId = Date.now();
