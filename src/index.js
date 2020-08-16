@@ -1,5 +1,3 @@
-import './style.scss';
-
 class Game {
   gameId = Date.now();
 

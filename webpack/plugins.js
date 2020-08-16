@@ -12,7 +12,7 @@ const plugins = {
   production: [
     new HTMLWebpackPlugin({
       ...htmlPluginConfig,
-      template: path.resolve(__dirname, '../src/', 'index.html'),
+      template: path.resolve(__dirname, '../src/', 'static/template.html'),
       minify: {
         collapseWhitespace: true
       },
@@ -25,7 +25,7 @@ const plugins = {
   development: [
     new HTMLWebpackPlugin({
       ...htmlPluginConfig,
-      template: path.resolve(__dirname, '../src/', 'index.html'),
+      template: path.resolve(__dirname, '../src/', 'static/template.html'),
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
