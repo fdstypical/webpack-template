@@ -4,11 +4,11 @@ const isDev = process.env.NODE_ENV === 'development';
 async function webpackPrestart(env, { mode }) {
   return {
     ...genericConfig,
-    output: output[mode],
-    devServer,
     devtool: isDev ? 'source-map' : '',
+    output: output[mode],
     optimization: optimization[mode],
-    plugins,
+    plugins: plugins[mode],
+    devServer,
   };
 }
 
