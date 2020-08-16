@@ -2,3 +2,10 @@ $font-family: Georgia, serif;
 $font-size-base: 14px;
 $font-weight-primary: normal;
 $font-color-base: #000000;
+
+/* BEM separators
+-------------------*/
+$namespace: "tmp";
+$element-separator: "__";
+$modifier-separator: "--";
+$state-prefix: "is-";
