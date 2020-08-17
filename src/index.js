@@ -1,6 +1,8 @@
 import './assets/scss/index.scss';
 import './style.scss';
 
+import './index';
+
 class Game {
   gameId = Date.now();
 
