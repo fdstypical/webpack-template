@@ -6,7 +6,7 @@ const genericConfig = {
   context: path.resolve(__dirname, 'src'),
   entry: path.resolve(__dirname, '../src/', 'index.js'),
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json'],
+    extensions: ['.ts', '.tsx', '.js', 'jsx', '.json'],
     alias: {
       '@src': path.resolve(__dirname, '../src'),
       '@assets': path.resolve(__dirname, '.../src/assets'),
