@@ -1,10 +1,11 @@
 import './assets/scss/index.scss';
 import './style.scss';
 
-import './index';
+import calc from './script.ts';
 
 class Game {
   gameId = Date.now();
+  calc = calc(1, 2);
 
   log() {
     // eslint-disable-next-line no-console
