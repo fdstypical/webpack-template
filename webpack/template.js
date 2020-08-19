@@ -5,11 +5,11 @@ const isDev = process.env.NODE_ENV === 'development';
 const genericConfig = {
   entry: './src/index.ts',
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', 'jsx', '.json'],
     alias: {
       '@src': path.resolve(__dirname, '../src'),
-      '@assets': path.resolve(__dirname, '.../src/assets'),
-    }
+      '@assets': path.resolve(__dirname, '../src/assets'),
+    },
+    extensions: ['.ts', '.tsx', '.js', 'jsx', '.json'],
   },
   module: {
     rules: [

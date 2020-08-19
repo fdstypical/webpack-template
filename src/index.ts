@@ -1,5 +1,5 @@
-import "./assets/scss/index.scss";
-import "./style.scss";
+import "@assets/scss/index.scss";
+import "@src/style.scss";
 
 import calc from "./script";
 
