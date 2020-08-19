@@ -3,8 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 
 const genericConfig = {
-  context: path.resolve(__dirname, 'src'),
-  entry: path.resolve(__dirname, '../src/', 'index.ts'),
+  entry: './src/index.ts',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', 'jsx', '.json'],
     alias: {

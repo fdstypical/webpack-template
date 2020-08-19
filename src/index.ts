@@ -4,8 +4,8 @@ import "./style.scss";
 import calc from "./script";
 
 class Game {
-  gameId = Date.now();
-  calc = calc(10, 25);
+  gameId: number = Date.now();
+  calc: number = calc(10, 25);
 
   log() {
     // eslint-disable-next-line no-console
