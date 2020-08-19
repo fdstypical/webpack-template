@@ -4,7 +4,7 @@ const isDev = process.env.NODE_ENV === 'development';
 
 const genericConfig = {
   context: path.resolve(__dirname, 'src'),
-  entry: path.resolve(__dirname, '../src/', 'index.js'),
+  entry: path.resolve(__dirname, '../src/', 'index.ts'),
   resolve: {
     extensions: ['.ts', '.tsx', '.js', 'jsx', '.json'],
     alias: {
