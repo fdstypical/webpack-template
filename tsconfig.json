@@ -9,7 +9,12 @@
     "skipLibCheck": true,
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@assets/*": ["src/assets/*"]
+    }
   },
   "include": ["src/**/*", "index.d.ts"],
   "exclude": ["node_modules"]
