@@ -3,6 +3,8 @@ import "@src/style.scss";
 
 import calc from "@src/script";
 
+// just test commit
+
 class Game {
   gameId: number = Date.now();
   calc: number = calc(10, 25);
