@@ -1,7 +1,7 @@
-import "@assets/scss/index.scss";
-import "@src/style.scss";
+import '@assets/scss/index.scss';
+import '@src/style.scss';
 
-import calc from "@src/script";
+import calc from '@src/script';
 
 class Game {
   gameId: number = Date.now();

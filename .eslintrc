@@ -1,11 +1,21 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "airbnb-base"],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "airbnb-base",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "rules": {
     "no-unused-vars": "warn",
     "import/no-unresolved": "off",
     "lines-between-class-members": "off"
+  },
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "tsconfigRootDir": "."
   },
   "env": {
     "es6": true,
