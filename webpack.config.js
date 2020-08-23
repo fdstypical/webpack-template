@@ -1,6 +1,7 @@
-const { optimization, genericConfig, plugins, devServer, output } = require('./webpack');
+const { optimization, createGenericConfig, plugins, devServer, output } = require('./webpack');
 
 async function webpackPrestart(env, { mode }) {
+  const genericConfig = createGenericConfig(mode);
   const isDev = mode === 'development';
 
   return {

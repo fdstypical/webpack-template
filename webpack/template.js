@@ -1,8 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const isDev = process.env.NODE_ENV === 'development';
 
-const genericConfig = {
+const createGenericConfig = (mode) => ({
   entry: './src/index.ts',
   resolve: {
     alias: {
@@ -35,7 +34,7 @@ const genericConfig = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              hmr: isDev,
+              hmr: mode === 'development',
               reloadAll: true,
             },
           },
@@ -50,6 +49,6 @@ const genericConfig = {
       }
     ]
   }
-}
+});
 
-module.exports = { genericConfig };
+module.exports = { createGenericConfig };
