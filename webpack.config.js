@@ -1,7 +1,8 @@
 const { optimization, genericConfig, plugins, devServer, output } = require('./webpack');
-const isDev = process.env.NODE_ENV === 'development';
 
 async function webpackPrestart(env, { mode }) {
+  const isDev = mode === 'development';
+
   return {
     ...genericConfig,
     devtool: isDev ? 'source-map' : '',
