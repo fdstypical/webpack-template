@@ -6,12 +6,11 @@
   "browserslist": "> 0.25%, not dead",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development",
     "lint": "eslint ./src --ext .ts,.js",
-    "lint:fix": "eslint ./src --ext .ts,.js --fix"
+    "lint:fix": "eslint ./src --ext .ts,.js --fix",
+    "dev": "webpack --mode=development",
+    "build": "webpack --mode=production",
+    "start": "webpack-dev-server --mode=development"
   },
   "author": "fdstypical",
   "license": "ISC",
