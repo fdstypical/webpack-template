@@ -1,8 +1,6 @@
 import '@assets/scss/index.scss';
 import '@src/style.scss';
 
-// just add comment for test
-
 class Game {
   gameId: number = Date.now();
 
