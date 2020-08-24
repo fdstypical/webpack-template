@@ -6,7 +6,7 @@ class Game {
 
   log() {
     // eslint-disable-next-line no-console
-    console.log(this.gameId);
+    console.log('this game ID:', this.gameId);
   }
 }
 
