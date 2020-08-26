@@ -9,9 +9,10 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "no-unused-vars": "warn",
+    "quotes": "warn",
     "import/no-unresolved": "off",
-    "lines-between-class-members": "off"
+    "lines-between-class-members": "off",
+    "@typescript-eslint/no-inferrable-types": "off"
   },
   "parserOptions": {
     "project": "tsconfig.json",
